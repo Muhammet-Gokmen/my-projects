@@ -26,16 +26,16 @@ Resources:
           ToPort: 22
           CidrIp: 0.0.0.0/0
   
-  WebServerHost :         
+  WebServerHost:         
     Type: AWS::EC2::Instance
     Properties: 
       ImageId: ami-0022f774911c1d690
       InstanceType: t2.micro
       KeyName: firstkey
       SecurityGroupIds: 
-       - !Ref WebServerSecurityGroup
+        - !Ref WebServerSecurityGroup
       Tags: 
-       - Key: Name
+        - Key: Name
       Value: !Sub Web Server of ${AWS::StackName} Stack
       UserData: 
        Fn::Base64:
